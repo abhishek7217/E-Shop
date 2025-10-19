@@ -16,8 +16,8 @@ export default function Home() {
     <div className="container py-5">
       <div className="row align-items-center">
         <div className="col-md-6">
-          <h1 className="display-5 fw-bold">Summer Collection 2024</h1>
-          <p className="lead text-muted">New collection — modern silhouettes. Converted from the Figma kit for your assignment.</p>
+          <h1 className="display-5 fw-bold">New Collection</h1>
+          <p className="lead text-muted">SUMMER 2024</p>
           <Link to="/products" className="btn btn-dark">Go to Shop</Link>
         </div>
 
