@@ -1,0 +1,206 @@
+/* Load Beatrice fonts - place font files in public/fonts */
+@font-face {
+  font-family: 'Beatrice Deck Trial';
+  src: url('/fonts/BeatriceDeckTrial-Regular.woff2') format('woff2'),
+       url('/fonts/BeatriceDeckTrial-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Beatrice Trial';
+  src: url('/fonts/BeatriceTrial-Light.woff2') format('woff2'),
+       url('/fonts/BeatriceTrial-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Page background uses local image  */
+body {
+  margin: 0;
+  min-height: 100%;
+  background-image: url('/images/background_.jpg');
+  background-size: contain;
+  background-repeat: repeat;
+  background-position: center;
+  font-family: 'Beatrice Deck Trial', 'Beatrice Trial', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #000;
+}
+
+/* Navbar and footer backgrounds are transparent */
+.navbar, .footer-bg {
+  background: transparent !important;
+}
+
+/* Card images */
+.card-img-top {
+  object-fit: contain;
+  height: 240px;
+}
+
+/* Beatrice headings */
+.beatrice-heading {
+  font-family: 'Beatrice Deck Trial';
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 40px;
+  letter-spacing: 2px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* smaller beatrice heading variant for product headings */
+.beatrice-heading-sm {
+  font-family: 'Beatrice Deck Trial';
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* small text style */
+.beatrice-sub {
+  font-family: 'Beatrice Trial';
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1;
+  letter-spacing: 2px;
+  text-align: center;
+  color: rgba(0,0,0,0.75);
+}
+
+/* Search bar styles: small, search button inside input, borderless until hover */
+.search-wrap {
+  padding: 0.6rem 0;
+}
+.search-input-group {
+  border-radius: 9999px;
+  transition: border 0.15s;
+  border: 0;
+  overflow: hidden;
+}
+.search-input-group:hover {
+  border: 1px solid #D7D7D7;
+}
+.search-input {
+  border: 0;
+  box-shadow: none;
+  padding-left: 1rem;
+  border-radius: 9999px 0 0 9999px;
+}
+.search-btn {
+  border: 0;
+  background: transparent;
+  padding: 0.5rem 0.9rem;
+}
+
+/* Filter button and filter panel styles */
+.filter-button {
+  border: 1px solid #D7D7D7;
+  color: #000;
+  background: white;
+  border-radius: 6px;
+}
+.filter-panel .btn-filter-item {
+  border: 1px solid #D7D7D7;
+  color: #D7D7D7;
+  background: white;
+  margin: 0.25rem;
+}
+.filter-panel .btn-filter-item:hover,
+.filter-panel .btn-filter-item.active {
+  border: 1px solid #000 !important;
+  color: #000 !important;
+}
+
+/* Category heading */
+.category-heading {
+  font-family: 'Beatrice Deck Trial';
+  font-weight: 400;
+  font-size: 18px;
+  letter-spacing: 1px;
+  margin: 28px 0 12px;
+  text-transform: uppercase;
+}
+
+/* Product card: only like & add shown on card*/
+.product-card {
+  position: relative;
+}
+.product-card .card-actions {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display:flex;
+  gap:8px;
+  z-index: 5;
+}
+
+/* liked badge */
+.liked-badge {
+  background: #dc3545;
+  color: white;
+  border-radius: 999px;
+  padding: 2px 7px;
+  font-size: 12px;
+}
+
+/* approach block spacing */
+.approach-title { margin-top: 40px; margin-bottom: 8px; }
+.approach-desc { margin-bottom: 60px; }
+
+/* Footer links:- no decoration by default; underline only on hover */
+.footer-vertical a {
+  text-decoration: none;
+  color: inherit;
+}
+.footer-vertical a:hover {
+  text-decoration: underline;
+}
+
+/* Footer center logo  */
+.footer-center-logo img { max-height: 140px; }
+
+/* Ensure collapsed nav behaves normally on mobile */
+
+/* mobile behavior tweaks */
+@media (max-width: 767.98px) {
+  .card-img-top { height: 180px; }
+  .beatrice-heading { font-size: 28px; line-height: 34px; }
+  .search-input { font-size: 14px; padding: 0.5rem; }
+
+  /* When collapsed, nav links show vertically  */
+  .navbar-nav {
+    gap: .25rem;
+  }
+}
+
+/* --- Navbar grid to keep left links, centered logo, right icons --- */
+.header-grid {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+}
+
+/* center the logo in the middle column */
+.logo-center {
+  justify-self: center;
+}
+
+/* make sure left items (links + hamburger) align left on desktop */
+.left-area { justify-self: start; }
+
+/* right icons */
+.right-area { justify-self: end; }
+
+/* On very small screens ensure spacing is good */
+@media (max-width: 767.98px) {
+  .header-grid { grid-template-columns: auto 1fr auto; }
+  .logo-center img { height: 36px; }
+}
